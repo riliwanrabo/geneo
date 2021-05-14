@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~filepond/dist/filepond.min.css";
+
+header {
+    svg {
+        width: 120px;
+    }
+
+    nav {
+        a {
+            font-weight: bold;
+
+            &.active {
+                @apply text-primary
+            }
+        }
+    }
+
+    .cta {
+        color: #074c4c !important;
+    }
+}
+
+input, textarea {
+    @apply text-sm text-gray-700 lowercase
+}
+
+::placeholder {
+    @apply text-sm;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+.filepond--drop-label {
+    @apply rounded;
+    text-transform: capitalize;
+    font-weight: 100 !important;
+}
+
+.filepond--credits {
+    display: none;
+}
+
+.alert {
+    @apply bg-danger py-3 rounded-none px-4 mb-6 text-white text-sm leading-relaxed;
+    &.success {
+        @apply bg-green-400 rounded-none;
+    }
+
+    hr {
+        margin: 7px 0;
+        border-color: #f3f4f666;
+    }
+}
