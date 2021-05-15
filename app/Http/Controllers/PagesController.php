@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactFormRequest;
+use App\Mail\ContactEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,13 +25,15 @@ class PagesController extends Controller
     {
         // save form
         $data = collect($request->all())->toJson();
-        ['email' => $email] = $request->all();
+        ['email' => $email, 'name' => $name, 'message' => $message] = $request->all();
         if ($store = cache()->put($email . '-contact', $data)) {
             if ($request->has('file')) {
                 $file = $request->get('file');
                 $newFile = explode('-', $file);
                 Storage::move($file, 'uploads/' . $newFile[1]);
             }
+            // Send Email
+            Mail::to('riliwan.rabo@gmail.com')->send(new ContactEmail($name, $email, $message));
             return redirect('/contact')->with('success', 'Your message has been received.');
         }
 
