@@ -17,9 +17,9 @@ class ContactEmail extends Mailable
      *
      * @param string $name
      * @param string $email
-     * @param string $message
+     * @param mixed $message
      */
-    public function __construct(private string $name, private string $email, private string $message)
+    public function __construct(private string $name, private string $email, private mixed $message)
     {
         //
     }
@@ -32,8 +32,10 @@ class ContactEmail extends Mailable
     public function build()
     {
         $name = $this->name;
-        $message = $this->message;
+        $msg = $this->message;
         $email = $this->email;
-        return $this->view('emails.contact', compact('name', 'email', 'message'));
+        return $this
+            ->subject("Geneo Test Application")
+            ->view('emails.contact', compact('name', 'email', 'msg'));
     }
 }
