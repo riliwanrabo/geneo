@@ -21,9 +21,9 @@ class ContactEmail extends Mailable
      *
      * @param string $name
      * @param string $email
-     * @param mixed $message
+     * @param $message
      */
-    public function __construct(string $name, string $email, mixed $message)
+    public function __construct(string $name, string $email, $message)
     {
         $this->name = $name;
         $this->email = $email;
