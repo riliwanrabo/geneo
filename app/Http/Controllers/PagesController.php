@@ -44,6 +44,8 @@ class PagesController extends Controller
     {
         $validator = Validator::make($request->only('file'), [
             'file' => ['sometimes', 'file', 'mimes:pdf,csv,xlsx,xls']
+        ],[
+            'file.mimes' => 'You can only upload pdf, xslx, xls and csv files'
         ]);
 
         if ($validator->fails()) {
