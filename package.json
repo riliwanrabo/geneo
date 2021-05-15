@@ -21,6 +21,7 @@
         "tailwindcss": "^2.1.2"
     },
     "dependencies": {
-        "filepond": "^4.27.1"
+        "filepond": "^4.27.1",
+        "filepond-plugin-file-validate-type": "^1.2.6"
     }
 }

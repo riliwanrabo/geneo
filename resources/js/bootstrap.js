@@ -1,4 +1,6 @@
 window._ = require('lodash');
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -8,6 +10,7 @@ window._ = require('lodash');
 
 window.axios = require('axios');
 window.FilePond = require('filepond');
+FilePond.registerPlugin(FilePondPluginFileValidateType);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 

@@ -91,8 +91,11 @@
 
 @push('scripts')
     <script>
+        // import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
         const inputElement = document.querySelector('input[type="file"]');
-        const pond = FilePond.create(inputElement);
+        const pond = FilePond.create(inputElement, {
+            acceptedFileTypes: ['text/csv','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel', 'application/pdf'],
+        });
         let serverResponse = '';
         pond.setOptions({
             server: {
