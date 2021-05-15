@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);
+Route::get('/', [App\Http\Controllers\PagesController::class, 'contact']);
 Route::get('/contact', [App\Http\Controllers\PagesController::class, 'contact']);
 Route::post('/contact', [App\Http\Controllers\PagesController::class, 'store'])->middleware('throttle:web');
 Route::post('/upload', [App\Http\Controllers\PagesController::class, 'uploadFile']);
