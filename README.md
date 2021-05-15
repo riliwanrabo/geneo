@@ -1,5 +1,5 @@
 # Geneo Contact App
-This app allows you to send messages to GENEO's support team (fake, I get the emails). After the server has been booted up, you can click on the contact link to see the form. Enter your information and send an offer letter 😊.
+This app allows you to send messages to GENEO's support team (fake, I get the emails). Click on the contact link to see the form. Enter your information and send an offer letter 😊.
 
 ##### Requirements:
 - PHP: ^8.0
