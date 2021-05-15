@@ -11,6 +11,10 @@ class ContactEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    private $name;
+    private $message;
+    private $email;
+
 
     /**
      * Create a new message instance.
@@ -19,9 +23,11 @@ class ContactEmail extends Mailable
      * @param string $email
      * @param mixed $message
      */
-    public function __construct(private string $name, private string $email, private mixed $message)
+    public function __construct(string $name, string $email, mixed $message)
     {
-        //
+        $this->name = $name;
+        $this->email = $email;
+        $this->message = $message;
     }
 
     /**
