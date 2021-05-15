@@ -95,6 +95,7 @@
         const inputElement = document.querySelector('input[type="file"]');
         const pond = FilePond.create(inputElement, {
             acceptedFileTypes: ['text/csv','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel', 'application/pdf'],
+            fileValidateTypeLabelExpectedTypes: "You can only upload pdf, xslx, xls and csv files"
         });
         let serverResponse = '';
         pond.setOptions({
