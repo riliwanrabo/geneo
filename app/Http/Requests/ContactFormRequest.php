@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\ThrottleSubmission;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Storage;
@@ -36,6 +35,7 @@ class ContactFormRequest extends FormRequest
 
     protected function failedValidation(Validator $validator): void
     {
+        parent::failedValidation($validator);
         $request = $this->request;
         if ($request->has('file')) {
             ['file' => $file] = $this->request->all();
