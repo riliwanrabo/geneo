@@ -34,17 +34,23 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 ## Setup Instructions
 For the best experience, use docker to start up environment by running the command below in the root of your project
-```bash 
+```bash
 ./vendor/bin/sail up -d
 ``` 
 The command above launches the website on http://localhost
 
 Alternatively, If you have all the requirements, you can use laravel built-in server by running:
 
-```bash 
+```bash
 php artisan serve --port 90
 ``` 
 This command means you will launch the website on http://localhost:90
+
+## Tests
+To run the test cases, make sure you are at the root of the application and run
+```bash 
+php artisan test
+```
 
 
 
